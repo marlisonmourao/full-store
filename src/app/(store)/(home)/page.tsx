@@ -1,3 +1,9 @@
+'use client'
+
+import { useSession } from 'next-auth/react'
+
 export default function Home() {
-  return <h1 className="text-xl text-zinc-600">Hello World</h1>
+  const { data } = useSession()
+
+  return <h1 className="text-xl text-zinc-600">{data?.user?.name}</h1>
 }

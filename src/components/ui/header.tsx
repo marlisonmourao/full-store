@@ -2,7 +2,7 @@ import { MenuIcon, ShoppingCartIcon } from 'lucide-react'
 import { Button } from './button'
 import { Card } from './card'
 import { Sheet, SheetTrigger } from './sheet'
-import Sidebar from './sidenar'
+import Sidebar from './sidebar'
 
 const Header = () => {
   return (

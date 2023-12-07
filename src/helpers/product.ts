@@ -12,10 +12,11 @@ export function computeProductTotalPrice(product: Product): ProductTotalPrice {
     }
   }
 
-  const totalPrice = Number(product.basePrice) * (product.discountPercent / 100)
+  const totalDiscount =
+    Number(product.basePrice) * (product.discountPercent / 100)
 
   return {
     ...product,
-    totalPrice: Number(totalPrice),
+    totalPrice: Number(product.basePrice) - totalDiscount,
   }
 }

@@ -9,10 +9,11 @@ import {
   PercentIcon,
 } from 'lucide-react'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { Avatar, AvatarFallback } from './avatar'
 import { Button } from './button'
 import { Separator } from './separator'
-import { SheetContent, SheetHeader } from './sheet'
+import { SheetClose, SheetContent, SheetHeader } from './sheet'
 
 function Sidebar() {
   const { status, data } = useSession()
@@ -82,10 +83,14 @@ function Sidebar() {
           Ofertas
         </Button>
 
-        <Button variant="outline" className="w-full justify-start gap-2">
-          <ListOrderedIcon size={16} />
-          Ofertas
-        </Button>
+        <SheetClose asChild>
+          <Link href={`/catalog`}>
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <ListOrderedIcon size={16} />
+              Catálogo
+            </Button>
+          </Link>
+        </SheetClose>
       </div>
     </SheetContent>
   )

@@ -1,4 +1,5 @@
 import { MenuIcon, ShoppingCartIcon } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from './button'
 import { Card } from './card'
 import { Sheet, SheetTrigger } from './sheet'
@@ -17,9 +18,11 @@ const Header = () => {
         <Sidebar />
       </Sheet>
 
-      <h1 className="text-lg font-semibold">
-        <span className="text-primary">FSW</span> Store
-      </h1>
+      <Link href="/">
+        <h1 className="text-lg font-semibold">
+          <span className="text-primary">FSW</span> Store
+        </h1>
+      </Link>
 
       <Button size="icon" variant="outline">
         <ShoppingCartIcon />
